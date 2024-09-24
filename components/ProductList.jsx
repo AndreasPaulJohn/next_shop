@@ -2,6 +2,7 @@ import React from 'react';
 import jsondb from "../jsondb/products";
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MAX_WORDS = 15; // Maximale Anzahl der Wörter für die Beschreibung
 
@@ -21,8 +22,14 @@ export default function ProductList() {
         {jsondb.products.map((product) => (
           <Col key={product.name}>
             <Card className="h-100 d-flex flex-column">
-              <Link href={`/products/${product.url}`} passHref>
-                <Card.Img variant="top" src={product.image} style={{ objectFit: 'cover', height: '200px' }} />
+              <Link href={`/products/${product.url}`}>
+                <Image 
+                  src={product.image} 
+                  alt={product.name}
+                  width={200}
+                  height={180}
+                  style={{ objectFit: 'cover', height: '250px', width: '100%' }}
+                />
               </Link>
               <Card.Body className="d-flex flex-column">
                 <Card.Title className="mb-2">
@@ -31,8 +38,8 @@ export default function ProductList() {
                 <Card.Text className="flex-grow-1">
                   {truncateDescription(product.description)}
                   {product.description.split(' ').length > MAX_WORDS && (
-                    <Link href={`/products/${product.url}`} passHref>
-                      <div className="read-more mt-2">Read more...</div>
+                    <Link href={`/products/${product.url}`} className="read-more mt-2">
+                      Read more...
                     </Link>
                   )}
                 </Card.Text>
@@ -45,10 +52,6 @@ export default function ProductList() {
       <style jsx>{`
         .product-list :global(.card) {
           height: 100%;
-        }
-        .product-list :global(.card-img-top) {
-          height: 200px;
-          object-fit: cover;
         }
         .product-list :global(.card-body) {
           display: flex;

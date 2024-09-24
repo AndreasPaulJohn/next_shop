@@ -48,7 +48,7 @@ const jsondb = {
     {
       name: "Reinforced Vibrant",
       description:
-        "This is the same shoe as shoe 1, but with a reinforced sole. A perfect blend of style and performance, this running shoe features a lime green and navy blue colorway. The shoe is streamlined profile is enhanced by its layered design elements and contrasting white midsole. Ideal for runners seeking a balance of eye-catching aesthetics and functional design.",
+        "This is the same shoe as Vibrant, but with a reinforced sole. A perfect blend of style and performance, this running shoe features a lime green and navy blue colorway. The shoe is streamlined profile is enhanced by its layered design elements and contrasting white midsole. Ideal for runners seeking a balance of eye-catching aesthetics and functional design.",
       category: "Running Shoes",
       price: 158.5,
       url: "shoe6",

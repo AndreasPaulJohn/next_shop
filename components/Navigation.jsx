@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { Badge } from 'react-bootstrap'
 
 export default function Navigation() {
@@ -19,5 +19,3 @@ export default function Navigation() {
     </div>
   );
 }
-
-
