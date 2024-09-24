@@ -2,7 +2,14 @@ import { useRouter } from "next/router";
 import jsondb from "@/jsondb/products";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import { ListGroup, Button, ListGroupItem, Container, Row, Col } from "react-bootstrap";
+import {
+  ListGroup,
+  Button,
+  ListGroupItem,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 
 export default function Productside() {
   const router = useRouter();
@@ -18,25 +25,7 @@ export default function Productside() {
   }
   return (
     <Container>
-      <Row className="mb-3">
-        <Col>
-          <Link href="/">
-            <div className="text-dark">🠔 back</div>
-          </Link>
-        </Col>
-      </Row>
       <Row>
-        <Col md={6} className="mb-3">
-          <div style={{ width: '100%', height: '330px', position: 'relative' }}>
-            <Image
-              className="rounded-3"
-              src={product.image}
-              alt={product.name}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-        </Col>
         <Col md={6}>
           <h2>{product.name}</h2>
           <ListGroup variant="flush">
@@ -49,7 +38,9 @@ export default function Productside() {
               <input className="form-check-input me-2 ms-3" type="checkbox" />
             </ListGroupItem>
             <ListGroupItem>
-              <label htmlFor="quantity" className="form-label">Number of articles</label>
+              <label htmlFor="quantity" className="form-label">
+                Number of articles
+              </label>
               <input
                 id="quantity"
                 className="form-control"
@@ -59,9 +50,26 @@ export default function Productside() {
               />
             </ListGroupItem>
             <ListGroupItem>
-              <Button variant="danger" className="w-100">to basket of goods</Button>
+              <Button variant="danger" className="w-100">
+                to basket of goods
+              </Button>
             </ListGroupItem>
           </ListGroup>
+        </Col>
+        <Col md={6} className="mb-3">
+          <div style={{ width: "100%", height: "330px", position: "relative" }}>
+            <Image
+              className="rounded-3"
+              src={product.image}
+              alt={product.name}
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+          <Link href="/"> 
+  <div className="text-center mt-4 text-dark">🠔 back</div>
+</Link>
+
         </Col>
       </Row>
     </Container>

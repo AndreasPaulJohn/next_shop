@@ -39,7 +39,7 @@ export default function ProductList() {
                   {truncateDescription(product.description)}
                   {product.description.split(' ').length > MAX_WORDS && (
                     <Link href={`/products/${product.url}`} className="read-more mt-2">
-                      Read more...
+                  <p> Read more... </p>
                     </Link>
                   )}
                 </Card.Text>
