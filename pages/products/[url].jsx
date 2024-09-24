@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import jsondb from "@/jsondb/products";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ListGroup, Button, ListGroupItem, Container, Row, Col } from "react-bootstrap";
 
 export default function Productside() {
